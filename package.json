@@ -1,8 +1,8 @@
 {
-	"name": "cattr",
+	"name": "mdo-pulse-agent",
 	"version": "dev",
-	"description": "Desktop client for Cattr",
-	"homepage": "https://cattr.app",
+	"description": "MDO Pulse Agent - Windows Desktop Application",
+	"homepage": "https://github.com/lynthz/MDO-Pulse-Agent",
 	"main": "app/src/app.js",
 	"scripts": {
 		"lint": "npx eslint .",
@@ -27,9 +27,9 @@
 		"clean-development": "npx cross-env AT_DEVMODE=meow electron ./tools/clean-development.js"
 	},
 	"build": {
-		"appId": "app.cattr",
-		"artifactName": "Cattr.${ext}",
-		"productName": "Cattr",
+		"appId": "app.mdopulse.agent",
+		"artifactName": "MDO-Pulse-Agent.${ext}",
+		"productName": "MDO Pulse Agent",
 		"protocols": [
 			{
 				"name": "Cattr SSO protocol",
@@ -71,15 +71,15 @@
 		},
 		"linux": {
 			"icon": "./resources/icons",
-			"synopsis": "Desktop time tracking application",
+			"synopsis": "MDO Pulse Agent - Windows Desktop Application",
 			"target": "AppImage",
 			"category": "Office",
 			"desktop": {
-				"Name": "Cattr",
+				"Name": "MDO Pulse Agent",
 				"Terminal": "false",
 				"Type": "Application",
-				"Keywords": "time;tracker;cattr;tracking;",
-				"MimeType": "x-scheme-handler/cattr;"
+				"Keywords": "time;tracker;mdopulse;agent;tracking;",
+				"MimeType": "x-scheme-handler/mdopulse;"
 			}
 		},
 		"win": {
@@ -89,26 +89,27 @@
 		"nsis": {
 			"oneClick": false,
 			"perMachine": false,
-			"artifactName": "Cattr_Setup.${ext}"
+			"artifactName": "MDO_Pulse_Agent_Setup.${ext}"
 		},
 		"appx": {
-			"identityName": "AmazingcatLLC.Cattr",
-			"displayName": "Cattr",
+			"identityName": "MDOPulseAgent.Desktop",
+			"displayName": "MDO Pulse Agent",
 			"publisher": "CN=3CE10A6B-6A65-461A-A33A-E6AD2673F412",
-			"publisherDisplayName": "amazingcat LLC",
+			"publisherDisplayName": "Lynthz",
 			"languages": [
 				"en-US",
+				"pt-BR",
 				"ru-RU"
 			]
 		}
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cattr-app/desktop-application"
+		"url": "https://github.com/lynthz/MDO-Pulse-Agent"
 	},
 	"author": {
-		"name": "amazingcat LLC",
-		"email": "team@amazingcat.net"
+		"name": "Lynthz",
+		"email": "lynthz@github.com"
 	},
 	"license": "SSPL-1.0",
 	"eslintConfig": {

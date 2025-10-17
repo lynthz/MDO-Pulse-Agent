@@ -29,6 +29,8 @@ export default async canvas => {
         mandatory: {
           chromeMediaSource: 'desktop',
           chromeMediaSourceId: device.id,
+          minWidth: 1920,
+          minHeight: 1080,
         },
       },
     });
@@ -41,7 +43,7 @@ export default async canvas => {
   // Resolve all MediaStreams inits
   userMediaStreams = await Promise.all(userMediaStreams);
 
-  // Grabbing frams for all MediaStreams
+  // Grabbing frams for all MediaStreams with max frame rate
   let userMediaGrabbers = userMediaStreams.map(mediaStream => {
 
     const mediaStreamTrack = mediaStream.getVideoTracks()[0];
@@ -91,7 +93,8 @@ export default async canvas => {
 
   });
 
-  // Return rendered canvas as JPEG image with 50% quality in DataURL (base64)
-  return canvas.toDataURL('image/jpeg', 0.5);
+  // Return rendered canvas as high-quality JPEG image (0.95 quality) in DataURL (base64)
+  // This provides a good balance between quality and file size for multi-monitor setups
+  return canvas.toDataURL('image/jpeg', 0.95);
 
 };

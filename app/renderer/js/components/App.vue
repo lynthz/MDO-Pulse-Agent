@@ -143,7 +143,7 @@ export default {
 
     this.$store.dispatch('showLoader');
     if (this.$i18n.locale === 'ru')
-      document.title = this.$t('Cattr');
+      document.title = this.$t('MDO Pulse');
 
     const auth = await this.$ipc.request('auth/is-authentication-required', {});
     this.$store.commit('setAuthenticatedStatus', !auth.body.required);

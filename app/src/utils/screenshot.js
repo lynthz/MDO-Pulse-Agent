@@ -58,9 +58,10 @@ const makeScreenshot = () => Promise.resolve()
     }
 
     // Remove Data URL header and create buffer
+    // Note: High quality screenshots (0.95) from multi-monitor setups may be larger than before
     const screenshot = Buffer.from(res.body.screenshot.substring(23), 'base64');
 
-    log.debug(`Captured in ${(Date.now() - timeStart)}ms`);
+    log.debug(`Captured in ${(Date.now() - timeStart)}ms (buffer size: ${(screenshot.length / 1024).toFixed(2)} KB)`);
     return screenshot;
 
   });

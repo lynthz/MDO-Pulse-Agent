@@ -1,6 +1,6 @@
-Cattr Desktop App  
+MDO Pulse Agent  
 ==========
-Electron desktop application for Cattr  
+Windows Desktop Agent for MDO Pulse - Time Tracking Application  
 
 Minimum system requirements to build the app
 - MacOS: Monterey 12.3.1  
@@ -83,3 +83,32 @@ Compatibility sheet:
   - **Host with macOS:** can produce builds only for macOS
   - **Host with Linux:** can produce builds for Linux and Windows (using Wine)
   - **Host with Windows:** can produce builds only for Windows
+
+## MDO Pulse Agent Configuration
+
+### Default Server
+The application is configured to connect to `https://cattr.mdoprime.com.br` by default. This can be changed by:
+1. During login: Enter a different hostname in the "Hostname" field on the first login step
+2. The hostname is stored in the system keychain after successful authentication
+
+### Screenshot Features
+- **High Quality Captures**: Screenshots are captured at 95% JPEG quality for optimal clarity
+- **Multi-Monitor Support**: Full support for simultaneous multi-monitor screenshot capture with proper resolution handling
+- **Silent Operation**: Screenshot notifications are disabled by default; intervals are captured and synced silently
+- **Performance**: Optimized for large high-resolution setups without performance degradation
+
+## About MDO Pulse Agent
+
+This is a Windows desktop agent specifically designed for MDO Pulse time tracking system. The agent runs silently in the background, monitoring user activity and capturing screenshots for time tracking purposes.
+
+### Features
+- **Silent Background Operation**: Runs without interrupting your workflow
+- **Automatic Time Tracking**: Tracks time spent on different applications and websites
+- **Screenshot Capture**: Takes periodic screenshots for activity verification
+- **Multi-Monitor Support**: Works across multiple monitors
+- **Secure Data Storage**: All data is stored locally and encrypted
+
+### Repository Information
+- **GitHub**: [https://github.com/lynthz/MDO-Pulse-Agent](https://github.com/lynthz/MDO-Pulse-Agent)
+- **Author**: Lynthz
+- **License**: SSPL-1.0

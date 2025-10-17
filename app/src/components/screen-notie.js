@@ -9,21 +9,16 @@ const log = new Logger('Screen-Notifier');
 
 tracker.on('interval-pushed', data => {
 
-  // Do not show notie is application is about to quit or application window is not exists
+  // Do not show notie if application is about to quit or application window does not exist
   if (
     osIntegration.isApplicationClosingNow
     || !osIntegration.window
-    || !userPreferences.get('showScreenshotNotification')
-    || data.deferred === true
   )
     return;
 
-  // Check is screenshot exists
-  if (data.screenshot) {
-    notie.screenshotNotification(data.screenshot, data.interval);
-  } else {
-    notie.screenshotNotification(EMPTY_IMAGE, data.interval);
-  }
+  // Screenshot notifications are disabled by default in MDO Pulse
+  // Intervals are still captured and synced with the server
+  log.debug('Screenshot captured silently');
 
 });
 
